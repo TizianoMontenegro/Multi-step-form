@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="desktop">
+        <sidebar class="sidebar">
+            <div class="item">
+                <div class="circle selected">
+                    <p class="number">1</p>
+                </div>
+                <div class="section">
+                    <p class="step">STEP 1</p>
+                    <h4>YOUR INFO</h4>
+                </div>
+            </div>
+            <div class="item">
+                <div class="circle">
+                    <p class="number">2</p>
+                </div>
+                <div class="section">
+                    <p class="step">STEP 2</p>
+                    <h4>SELECT PLAN</h4>
+                </div>
+            </div>
+            <div class="item">
+                <div class="circle">
+                    <p class="number">3</p>
+                </div>
+                <div class="section">
+                    <p class="step">STEP 3</p>
+                    <h4>ADD-ONS</h4>
+                </div>
+            </div>
+            <div class="item">
+                <div class="circle">
+                    <p class="number">4</p>
+                </div>
+                <div class="section">
+                    <p class="step">STEP 4</p>
+                    <h4>SUMMARY</h4>
+                </div>
+            </div>
+        </sidebar>
+        <main class="main">
+            <form class="form">
+                <div class="title">
+                    <h2>Personal info</h2>
+                    <p>Please provide your name, email address, and phone number.</p>
+                </div>
+                <div class="fields">
+                    <label for="name">Name</label>
+                    <br>
+                    <input type="text" name="name" id="name" required autocomplete="off">
+                    <br>
+                    <label for="email">Email Address</label>
+                    <br>
+                    <input type="email" name="email" id="email" required autocomplete="off">
+                    <br>
+                    <label for="number">Phone Number</label>
+                    <br>
+                    <input type="" name="number" id="number" required autocomplete="off">
+                </div>
+                <div class="buttons">
+                    <input type="button" value="Go Back">
+                    <input type="submit" value="Next Step">
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
