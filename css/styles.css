@@ -1,0 +1,172 @@
+:root{
+    --speed: .3s;
+    --radius: .6em;
+}
+*{
+    box-sizing: border-box;
+    font-family: Ubuntu, Arial, Helvetica, sans-serif;
+}
+body{
+    margin: 0;
+    background-color: #EEF5FF;
+}
+.desktop{
+    background-color: #fff;
+    width: 70%;
+    margin: 100px auto 0;
+    display: grid;
+    grid-template-columns: 215px 70%;
+    grid-template-rows: 440px;
+    padding: 1em;
+    align-content: flex-start;
+    border-radius: var(--radius);
+    border: none;
+    outline: none;
+}
+.desktop .sidebar{
+    padding: 1.3em 0 0 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    background-image: url("../images/bg-sidebar-desktop.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    border-radius: var(--radius);
+}
+.desktop .sidebar .item{
+    display: flex;
+    height: min-content;
+    align-items: center;
+    gap: 1em;
+}
+.desktop .sidebar .item .circle{
+    border: 1px solid #BEE1FE;
+    border-radius: 50%;
+    margin: 0;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.desktop .sidebar .item .circle .number{
+    color: #BEE1FE;
+    font-size: .7em;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.desktop .sidebar .item .circle.selected{
+    background-color: #BEE1FE;
+}
+.desktop .sidebar .item .circle.selected .number{
+    color: #000;
+}
+.desktop .sidebar .item .section{
+    color: #fff;
+}
+.desktop .sidebar .item .section .step{}
+.desktop .main{
+}
+.desktop .sidebar .item .section .step{
+    margin: 0;
+    font-size: .6em;
+    color: #999;
+}
+.desktop .sidebar .item .section h4{
+    margin: 0;
+    margin-top: 4px;
+    font-size: .7em;
+}
+.desktop .main .form{
+    margin: 0 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    padding-bottom: 1em;
+}
+.desktop .main .form .title{
+    margin-bottom: 1em;
+}
+.desktop .main .form .title h2{
+    color: #062A56;
+    margin-bottom: 0;
+    font-weight: 900;
+    font-size: 1.7em;
+}
+.desktop .main .form .title p{
+    font-size: .8em;
+    color: #888;
+    font-weight: 400;
+}
+.desktop .main .form .fields{
+    flex-grow: 1;
+}
+.desktop .main .form .fields input{
+    width: 100%;
+    height: 38px;
+    border-radius: 8px;
+    border: 1px solid #DDD;
+    outline: none;
+    margin: 8px 0 16px;
+    color: #062A56;
+    font-size: .9em;
+    font-weight: 500;
+    padding-left: 1em;
+    transition: border var(--speed);
+}
+.desktop .main .form .fields input{
+    width: 100%;
+    height: 38px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    margin: 8px 0 16px;
+    color: #062A56;
+    font-size: .9em;
+    font-weight: 500;
+    padding-left: 1em;
+    transition: border var(--speed);
+}
+.desktop .main .form .fields input:focus{
+    border: 1px solid #062A56;
+}
+.desktop .main .form .fields .label{
+    display: flex;
+    justify-content: space-between;
+}
+.desktop .main .form .fields .label label{
+    font-size: .7em;
+    font-weight: 600;
+    color: #062A56;
+}
+.desktop .main .form .fields .label .required{
+    font-size: .7em;
+    font-weight: 600;
+    color: #E1384E;
+    margin: 0;
+    display: none;
+}
+
+
+.desktop .main .form .buttons{
+    align-self: flex-end;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.desktop .main .form .buttons input{
+    padding: .8em 1.2em;
+    border-radius: .7em;
+    border: none;
+    background-color: #03295A;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: background-color var(--speed);
+    font-weight: 500;
+}
+.desktop .main .form .buttons input:hover{
+    background-color: #174A8B;
+}
