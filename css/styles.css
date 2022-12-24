@@ -100,10 +100,10 @@ body{
     color: #888;
     font-weight: 400;
 }
-.desktop .main .form .fields{
+.desktop .main .form .field{
     flex-grow: 1;
 }
-.desktop .main .form .fields input{
+.desktop .main .form .field .fields input{
     width: 100%;
     height: 38px;
     border-radius: 8px;
@@ -116,7 +116,7 @@ body{
     padding-left: 1em;
     transition: border var(--speed);
 }
-.desktop .main .form .fields input{
+.desktop .main .form .field .fields input{
     width: 100%;
     height: 38px;
     border-radius: 8px;
@@ -129,19 +129,19 @@ body{
     padding-left: 1em;
     transition: border var(--speed);
 }
-.desktop .main .form .fields input:focus{
+.desktop .main .form .field .fields input:focus{
     border: 1px solid #062A56;
 }
-.desktop .main .form .fields .label{
+.desktop .main .form .field .fields .label{
     display: flex;
     justify-content: space-between;
 }
-.desktop .main .form .fields .label label{
+.desktop .main .form .field .fields .label label{
     font-size: .7em;
     font-weight: 600;
     color: #062A56;
 }
-.desktop .main .form .fields .label .required{
+.desktop .main .form .field .fields .label .required{
     font-size: .7em;
     font-weight: 600;
     color: #E1384E;
@@ -169,4 +169,57 @@ body{
 }
 .desktop .main .form .buttons input:hover{
     background-color: #174A8B;
+}
+.desktop .main .form .buttons input#back{
+    background-color: transparent;
+    color: #999;
+    transition: color var(--speed);
+}
+.desktop .main .form .buttons input#back:hover{
+    color: #062A56;
+}
+
+.desktop .main .form .field .plan{
+}
+.desktop .main .form .field .plan .box__container{
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+.desktop .main .form .field .plan .box__item{
+    border-radius: var(--radius);
+    padding: 1em;
+    width: 100%;
+    border: 1px solid #eee;
+}
+.desktop .main .form .field .plan .box__item:hover{
+    border-radius: var(--radius);
+    padding: 1em;
+    width: 100%;
+    background-color: #eee;
+    transition: background-color var(--speed);
+    border: 1px solid #174A8B;
+    transition: border var(--speed);
+}
+.desktop .main .form .field .plan .box__item img{
+}
+.desktop .main .form .field .plan .box__item .plan-select{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+}
+.desktop .main .form .field .plan .box__item .plan-select h4,
+.desktop .main .form .field .plan .box__item .plan-select p,
+.desktop .main .form .field .plan .box__item .plan-select h5{
+    margin: 0;
+}
+.desktop .main .form .field .plan .box__item .plan-select h4{
+    font-size: .9em;
+}
+.desktop .main .form .field .plan .box__item .plan-select p{
+    font-size: .7em;
+}
+.desktop .main .form .field .plan .box__item .plan-select h5{
+    font-size: .7em;
+    display: no;
 }
