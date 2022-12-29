@@ -170,13 +170,17 @@ body{
 .desktop .main .form .buttons input:hover{
     background-color: #174A8B;
 }
-.desktop .main .form .buttons input#back{
+.desktop .main .form .buttons input.back{
     background-color: transparent;
     color: #999;
     transition: color var(--speed);
 }
-.desktop .main .form .buttons input#back:hover{
+.desktop .main .form .buttons input.back:hover{
     color: #062A56;
+}
+.desktop .main .form .buttons input.next{
+    display: flex;
+    margin-left: auto;
 }
 
 .desktop .main .form .field .plan{
@@ -191,6 +195,9 @@ body{
     padding: 1em;
     width: 100%;
     border: 1px solid #eee;
+}
+.desktop .main .form .field .plan .box__item.selected{
+    background-color: #BEE1FE;
 }
 .desktop .main .form .field .plan .box__item:hover{
     border-radius: var(--radius);
@@ -222,4 +229,57 @@ body{
 .desktop .main .form .field .plan .box__item .plan-select h5{
     font-size: .7em;
     display: no;
+}
+
+
+
+.desktop .main .form .field .checkboxs{
+    display: flex;
+    flex-direction: column;
+    gap: .9em;
+}
+.desktop .main .form .field .checkboxs .checkbox{
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: .8em;
+    padding-left: 1.2em;
+    gap: 1.2em;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    flex-shrink: 1;
+    transition: all .2s;
+}
+.desktop .main .form .field .checkboxs .checkbox:hover{
+    border: 1px solid #483EFF;
+}
+.desktop .main .form .field .checkboxs .checkbox input{
+}
+.desktop .main .form .field .checkboxs .checkbox input:checked .checkbox{
+    border: 1px solid #483EFF;
+    background-color: #F8F9FE;
+}
+.desktop .main .form .field .checkboxs .checkbox .description{}
+.desktop .main .form .field .checkboxs .checkbox input,
+.desktop .main .form .field .checkboxs .checkbox .description h4,
+.desktop .main .form .field .checkboxs .checkbox .description p,
+.desktop .main .form .field .checkboxs .checkbox .price{
+    margin: 0;
+}
+.desktop .main .form .field .checkboxs .checkbox .price{
+    margin-left: auto;
+}
+.desktop .main .form .field .checkboxs .checkbox .description h4{
+    color: #174A8B;
+    font-size: .8em;
+}
+.desktop .main .form .field .checkboxs .checkbox .description p{
+    font-size: .7em;
+    color: #999;
+}
+.desktop .main .form .field .checkboxs .checkbox .price{
+    font-size: .8em;
+    color: #483EFF;
+    font-weight: 400;
 }

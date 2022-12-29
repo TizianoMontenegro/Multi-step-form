@@ -38,7 +38,7 @@ const HTMLOptions = [
                         <h5>2 months free</h5>
                     </div>
                 </div>
-                <div class="box__item">
+                <div class="box__item selected">
                     <img src="../images/icon-advanced.svg"></img>
                     <div class="plan-select">
                         <h4>Arcade</h4>
@@ -57,12 +57,56 @@ const HTMLOptions = [
             </div>
         </div>`
     },
+    {
+        title: "Pick add-ons",
+        desc: "Add-ons help enhance your gaming experience.",
+        form: `
+        <div class="checkboxs">
+            <label for="check1" class="checkbox">
+                <input id="check1" type="checkbox" name="Online service">
+                <div class="description">
+                    <h4>Online service</h4>
+                    <p>Access to multiplayer games</p>
+                </div>
+                <p class="price">+$1/mo</p>
+            </label>
+            <label for="check2" class="checkbox">
+                <input id="check2" type="checkbox" name="Larger storage">
+                <div class="description">
+                    <h4>Larger storage</h4>
+                    <p>Extra 1TB of cloud save</p>
+                </div>
+                <p class="price">+$2/mo</p>
+            </label>
+            <label for="check3" class="checkbox">
+                <input id="check3" type="checkbox" name="Customizable Profile">
+                <div class="description">
+                    <h4>Customizable Profile</h4>
+                    <p>Custom theme on your profile</p>
+                </div>
+                <p class="price">+$2/mo</p>
+            </label>
+        </div>`
+    }
 ];
 const HTMLButtons = {
     1: "Next Step",
     2: "Confirm"
 }
-let formHTML = `
+const formHTML = `
+<div class="title">
+    <h2>${HTMLOptions[0].title}</h2>
+    <p>${HTMLOptions[0].desc}</p>
+</div>
+<div class="field">
+    ${HTMLOptions[0].form}
+</div>
+<div class="buttons">
+    <input class="next next1" type="button" value="${HTMLButtons[1]}">
+</div>
+`;
+
+const formHTML2 = `
 <div class="title">
     <h2>${HTMLOptions[1].title}</h2>
     <p>${HTMLOptions[1].desc}</p>
@@ -71,22 +115,35 @@ let formHTML = `
     ${HTMLOptions[1].form}
 </div>
 <div class="buttons">
-    <input id="back" type="button" value="Go Back">
-    <input id="next" type="button" value="${HTMLButtons[1]}">
+    <input class="back back2" type="button" value="Go Back">
+    <input class="next next2" type="button" value="${HTMLButtons[1]}">
 </div>
 `;
 
-document.querySelector(".form").innerHTML = formHTML;
+const formHTML3 = `
+<div class="title">
+    <h2>${HTMLOptions[2].title}</h2>
+    <p>${HTMLOptions[2].desc}</p>
+</div>
+<div class="field">
+    ${HTMLOptions[2].form}
+</div>
+<div class="buttons">
+    <input class="back back2" type="button" value="Go Back">
+    <input class="next next2" type="button" value="${HTMLButtons[1]}">
+</div>
+`;
+
+const form = document.querySelector(".form");
+form.innerHTML = formHTML;
 
 const nameRequired = document.querySelector(".required--name");
 const emailRequired = document.querySelector(".required--email");
 const numberRequired = document.querySelector(".required--number");
-
-const Button = document.getElementById("next");
-
 const inputName = document.getElementById("name");
 const inputEmail = document.getElementById("email");
 const inputNumber = document.getElementById("number");
+
 
 function validName() {
     let names = false;
@@ -135,48 +192,18 @@ function validNumber() {
     if(number == true) return true
 }
 
-// inputName.addEventListener("keydown", () => {
-//     if(
-//         inputName.value == "" ||
-//         !inputName.value.includes(" ") ||
-//         inputName.value.length < 6 ||
-//         inputName.value.length > 40 
-//     ){}else{
-//         nameRequired.style.display = "none";
-//         inputName.style.border = "1px solid #DDD";
-//     }
-// });
-
-// inputEmail.addEventListener("keydown", () => {
-//     if(
-//         inputEmail.value.includes(" ") ||
-//         !inputEmail.value.includes("@") ||
-//         !inputEmail.value.includes(".")
-//     ){}else{
-//         emailRequired.style.display = "none";
-//         inputEmail.style.border = "1px solid #DDD";
-//     }
-// });
-
-// inputNumber.addEventListener("keydown", () => {
-//     if(
-//         inputNumber.value.length < 9 ||
-//         inputNumber.value.length > 9 
-//     ){}else{
-//         numberRequired.style.display = "none";
-//         inputNumber.style.border = "1px solid #DDD";
-//     }
-// });
-
-Button.addEventListener("click", () => {
-    // console.log(validName())
-    // console.log(validEmail())
-    // console.log(validNumber())
+document.querySelector(".next1").addEventListener("click", () => {
     if(
     validName() == true &&
     validEmail() == true &&
     validNumber() == true
     ){
-        alert("hola mundo")
+        form.innerHTML = formHTML2;
+        document.querySelector(".back2").addEventListener("click", () => {
+            form.innerHTML = formHTML;
+        });
+        document.querySelector(".next2").addEventListener("click", () => {
+            form.innerHTML = formHTML3;
+        });
     }else{}
 });
