@@ -129,8 +129,22 @@ const formHTML3 = `
     ${HTMLOptions[2].form}
 </div>
 <div class="buttons">
-    <input class="back back2" type="button" value="Go Back">
-    <input class="next next2" type="button" value="${HTMLButtons[1]}">
+    <input class="back back3" type="button" value="Go Back">
+    <input class="next next3" type="button" value="${HTMLButtons[1]}">
+</div>
+`;
+
+const formHTML4 = `
+<div class="title">
+    <h2>${HTMLOptions[1].title}</h2>
+    <p>${HTMLOptions[1].desc}</p>
+</div>
+<div class="field">
+    ${HTMLOptions[1].form}
+</div>
+<div class="buttons">
+    <input class="back back4" type="button" value="Go Back">
+    <input class="next next4" type="button" value="${HTMLButtons[1]}">
 </div>
 `;
 
@@ -192,18 +206,86 @@ function validNumber() {
     if(number == true) return true
 }
 
+function whatForm(attr) {
+    if(attr.classList.contains("next1")) {  
+
+        document.querySelector(".next1").addEventListener("click", () => {
+            console.log("1")
+            if(
+            validName() == true &&
+            validEmail() == true &&
+            validNumber() == true
+            ){
+                form.innerHTML = formHTML2;
+                whatForm(document.querySelector(".next2"))  
+            }     
+        });
+
+    }else if(attr.classList.contains("next2")) {
+
+        document.querySelector(".back2").addEventListener("click", () => {
+            form.innerHTML = formHTML;
+            whatForm(document.querySelector(".next1"))
+        });
+        document.querySelector(".next2").addEventListener("click", () => {
+            form.innerHTML = formHTML3;
+            whatForm(document.querySelector(".next3"))
+        });
+        console.log("2")
+
+    }else if(attr.classList.contains("next3")){
+
+        document.querySelector(".back3").addEventListener("click", () => {
+            form.innerHTML = formHTML2;
+            whatForm(document.querySelector(".next2"))
+        });
+        document.querySelector(".next3").addEventListener("click", () => {
+            form.innerHTML = formHTML4;
+            whatForm(document.querySelector(".next4"))
+        });
+        console.log("3")
+
+    }else if(attr.classList.contains("next4")){
+
+        document.querySelector(".back4").addEventListener("click", () => {
+            form.innerHTML = formHTML3;
+            whatForm(document.querySelector(".next3"))
+        });
+        document.querySelector(".next4").addEventListener("click", () => {
+        });
+        console.log("4")
+
+    }
+}
+
+
 document.querySelector(".next1").addEventListener("click", () => {
+    console.log("1")
     if(
     validName() == true &&
     validEmail() == true &&
     validNumber() == true
     ){
         form.innerHTML = formHTML2;
-        document.querySelector(".back2").addEventListener("click", () => {
-            form.innerHTML = formHTML;
-        });
-        document.querySelector(".next2").addEventListener("click", () => {
-            form.innerHTML = formHTML3;
-        });
-    }else{}
+        whatForm(document.querySelector(".next2"))  
+    }     
+    // whatForm(document.querySelector(".next1"))  
+});
+document.querySelector(".back2").addEventListener("click", () => {
+    whatForm(document.querySelector(".next1"))  
+});
+document.querySelector(".next2").addEventListener("click", () => {
+    whatForm(document.querySelector(".next3"))  
+});
+document.querySelector(".back3").addEventListener("click", () => {
+    whatForm(document.querySelector(".next2"))  
+});
+document.querySelector(".next3").addEventListener("click", () => {
+    whatForm(document.querySelector(".next4"))  
+});
+document.querySelector(".back4").addEventListener("click", () => {
+    whatForm(document.querySelector(".next3"))  
+});
+document.querySelector(".next4").addEventListener("click", () => {
+    
 });
